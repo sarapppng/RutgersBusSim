@@ -14,8 +14,6 @@ define w2 = Character("Weekend 2")
 define c = Character("C")
 define b = Character("B")
 define pov = Character("[povname]")
-define newchar = Character("hi")
-define hi = Character("hello")
 
 
 # The game starts here.
@@ -49,7 +47,6 @@ label start:
     label named:
 
     "So your name is [povname]?"
-    "hielo"
 
     menu:
 
