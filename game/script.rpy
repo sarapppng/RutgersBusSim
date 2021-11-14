@@ -49,6 +49,7 @@ label start:
     label named:
 
     "So your name is [povname]?"
+    "hielo"
 
     menu:
 
