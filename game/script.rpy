@@ -54,7 +54,7 @@ label intro:
     "???" "Ah [povname], it’s your first day too?"
     "It’s your childhood friend, Dave! From high school! He looks worried."
 
-    show sylvie blue #placeholder sprite name
+    show sylvie blue normal #placeholder sprite name
 
     pov "Hey Dave, what’s up! Is something wrong?"
 
