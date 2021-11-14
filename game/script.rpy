@@ -15,6 +15,7 @@ define c = Character("C")
 define b = Character("B")
 define pov = Character("[povname]")
 define newchar = Character("hi")
+define dave = ("Dave")
 
 
 # The game starts here.
@@ -52,13 +53,26 @@ label start:
     menu:
 
         "Yes":
+
+        "Welcome to the definitive Rutgers Bus Dating experience! We hope you enjoy ;)" 
+
         jump start
 
         "No":
         jump naming
 
     label start:
-    e "You've created a new Ren'Py game."
+    "It’s a sunny day at the college avenue student center. You are a new transfer student at Rutgers who just transferred from Penn State."
+    "Right now, you’re waiting for the bus to go to your first class! Expository Writing! So exciting!!"
+    "Suddenly, someone runs up behind you, calling your name. You look behind you in confusion."
+    "???" "Ah [povname], it’s your first day too?"
+    "It’s your childhood friend, Dave! From high school! He looks worried."
+
+    pov "Hey Dave, what’s up! Is something wrong?"
+
+    dave "The buses! Dude, haven’t you been checking Reddit? All the buses have disappeared! Nobody can get to class!!!!!"
+
+    
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
