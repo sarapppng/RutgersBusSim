@@ -4,17 +4,19 @@
 # name of the character.
 
 
-define ee = Character("EE")
-define rexb = Character("REXB")
-define lx = Character("LX")
-define h = Character("H")
-define bhe = Character("B/He")
-define w1 = Character("Weekend 1")
-define w2 = Character("Weekend 2")
-define c = Character("C")
-define b = DynamicCharacter("b")
+define ee = Character("[EE]")
+define rexb = Character("[REXB]")
+define lx = Character("[LX]")
+define h = Character("[H]")
+define bhe = Character("[B/He]")
+define w1 = Character("[Wknd 1]")
+define w2 = Character("[Wknd 2]")
+define c = Character("[C]")
+define b = Character("[B]")
 define pov = Character("[povname]")
-define dave = ("Dave")
+define dave = Character("[Dave]")
+
+$ EE = REXB = LX = H = B/He = Wknd 1 = Wknd 2 = C = B = Dave = "???"
 
 
 
@@ -51,12 +53,16 @@ label intro:
     "It’s a sunny day at the college avenue student center. You are a new transfer student at Rutgers who just transferred from Penn State."
     "Right now, you’re waiting for the bus to go to your first class! Expository Writing! So exciting!!"
     "Suddenly, someone runs up behind you, calling your name. You look behind you in confusion."
-    "???" "Ah [povname], it’s your first day too?"
+
+    dave "Ah [povname], it’s your first day too?"
+
     "It’s your childhood friend, Dave! From high school! He looks worried."
 
     show sylvie blue normal #placeholder sprite name
 
     pov "Hey Dave, what’s up! Is something wrong?"
+
+    $ dave = "dave"
 
     dave "The buses! Dude, haven’t you been checking Reddit? All the buses have disappeared! Nobody can get to class!!!!!"
 
@@ -70,7 +76,6 @@ label intro:
 
     "You think to yourself, maybe you shouldn’t take the scooter. It might just be a better idea to wait and see if a bus comes."
     "There’s no way a bus COULDN’T come, right?"
-    $ b = "???"
 
     b "Oh my, how dreadful! No buses!"
 
