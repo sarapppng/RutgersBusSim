@@ -19,7 +19,8 @@ define dave = Character("Dave")
 image bg casc = "casc.jpg"
 image bg classroom = "classroom.jpg"
 
-$ ee = rexb = lx = h = bhe = w1 = w2 = c = b = dave = "???"
+# ok i think i fucked it up and this doesnt actually work loll?
+#$ ee = rexb = lx = h = bhe = w1 = w2 = c = b = dave = "???"
 
 
 
@@ -57,15 +58,13 @@ label intro:
     "Right now, you’re waiting for the bus to go to your first class! Expository Writing! So exciting!!"
     "Suddenly, someone runs up behind you, calling your name. You look behind you in confusion."
 
-    dave "Ah [povname], it’s your first day too?"
+    "???" "Ah [povname], it’s your first day too?"
 
     "It’s your childhood friend, Dave! From high school! He looks worried."
 
     show sylvie blue normal #placeholder sprite name
 
     pov "Hey Dave, what’s up! Is something wrong?"
-
-    $ dave = "dave"
 
     dave "The buses! Dude, haven’t you been checking Reddit? All the buses have disappeared! Nobody can get to class!!!!!"
 
@@ -80,7 +79,7 @@ label intro:
     "You think to yourself, maybe you shouldn’t take the scooter. It might just be a better idea to wait and see if a bus comes."
     "There’s no way a bus COULDN’T come, right?"
 
-    b "Oh my, how dreadful! No buses!"
+    "???" "Oh my, how dreadful! No buses!"
 
     "A smooth, sultry voice calls out behind you. You whirl around in surprise, and immediately your face slowly starts burning."
 
@@ -101,8 +100,6 @@ label intro:
     b "Ah how interesting. Oh of course how rude of me now to introduce myself, you can call me B."
     "He says with a blinding smile."
 
-    $ b = "B"
-
     pov "B, as in the letter ‘B’?"
 
     b "Exactly so, its sort of a nickname you could say"
@@ -112,6 +109,8 @@ label intro:
 
     "You look at your watch and start to panic. You hastily bid B goodbye and start walking toward Cook/Douglass and hope that you dont get shot." 
     "As you leave, you realize your face is still burning from the man you had just met five minutes ago."
+    
+    jump class1
     
 
     
@@ -125,7 +124,7 @@ label class1:
 
     "You sigh with relief. No more class! But wait, what do you do now that you’re on Cook/Douglass?"
 
-    rexb "Seriously??? I ran ALL THE WAY HERE! AAAARGH!!!!!"
+    "???" "Seriously??? I ran ALL THE WAY HERE! AAAARGH!!!!!"
 
     "You look to your right to see who was sounding so upset, and see a tall, muscular student. He’s wearing a hoodie with ‘Rutgers Football’ on it, a backwards hat, some grey joggers and white Nike forces."
 
@@ -134,35 +133,40 @@ label class1:
     menu:
 
         "You’re cute!":
-            jump rexb
+            jump rexb1
 
         "Yeah what he said! We came all the way over here for you to be late and to cancel class?":
             jump rexb2
 
 
     label rexb1:
-        rexb "Thanks cutie, but now is not the time for that"
+        "???" "Thanks cutie, but now is not the time for that"
         "You turn your face away in embarrassment as he continues to rant and yell at the professor. Soon other students start joining in and supporting the handsome hunk."
         "Eventually the professor concedes and goes over the syllabus of the class. While that happens you feel someone tap your right shoulder, its the handsome hunk form before."
 
         rexb "sorry about that, but we had more important matters. My name is Rexb, I know its a little weird but that's what it is. What is your name?"
-        $ rexb = "REXB"
 
         "Your face flushes and you answer"
 
         pov "my name is [povname], sorry about what happened earlier I didn't mean to say that out loud."
 
+        jump class1.2
 
 
     label rexb2:
-    "The hunk smiles at you making you want to melt into a puddle of goo. The professor relents and proceeds to go over the syllabus. You turn over to the hunk next to you and say,"
-    pov "Hey there, my name is [povname], and I think it’s really cool that you stood up and said what everyone else was thinking"
-    rexb "Of course, I’m more that happy to help the class especially after how far we all had to travel. Oh by the way my name is RexB, a little unordinary but it fits."
-    $ rexb = "REXB"
+        "The hunk smiles at you making you want to melt into a puddle of goo. The professor relents and proceeds to go over the syllabus. You turn over to the hunk next to you and say,"
+        
+        pov "Hey there, my name is [povname], and I think it’s really cool that you stood up and said what everyone else was thinking"
+
+        "???" "Of course, I’m more that happy to help the class especially after how far we all had to travel. Oh by the way my name is RexB, a little unordinary but it fits."
+
+        jump class1.2
 
 
+label class1.2:
     "Before you know it class is over, but the professor has one last announcement. All classes are fully cancelled until further notice due to the buses disappearance disassembling the rutgers infrastructure."
     "You decide to look into the disappearance by going to the library since you paid to go to this school and want to get the most out of it. You get up and look at Rexb one last time, and bid him farewell."
+
     rexb "good bye cutie, I’ll see you around"
     "as he proceeds to put his hat back on and walk away. You stare at his retreating figure with a blush as you take in his more “noticeable” assets."
     "Shaking your head you walk away to find the nearest library, wondering how this day could get any weirder"
@@ -174,8 +178,6 @@ label library:
     "his gorgeous hair goes down past the table and to the floor. It’s a purple-ish silvery color. How beautiful!"
     "You sneak a glance at his paper that he’s writing on. At the top, he’s written his name as 'H' Interesting..."
     "You have to talk to him! How could you start a conversation?"
-
-    $ h = "H"
     
     menu:
 
