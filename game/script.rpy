@@ -14,14 +14,19 @@ define w2 = Character("Weekend 2")
 define c = Character("C")
 define b = DynamicCharacter("b")
 define pov = Character("[povname]")
+<<<<<<< Updated upstream
 define dave = ("Dave")
+=======
+define dave = Character("[Dave]")
 
-
+# This sets all names to "???", so they can be revealed later
+$ EE = REXB = LX = H = B/He = Wknd 1 = Wknd 2 = C = B = Dave = "???"
+>>>>>>> Stashed changes
 
 # The game starts here.
 
 label start:
-    scene bg meadow #placeholder bg
+    scene bg uni #placeholder bg
     python:
         povname = renpy.input("What is your name?", length=32)
         povname = povname.strip()

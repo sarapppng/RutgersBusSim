@@ -46,6 +46,7 @@ Version: '4.6.0 NVIDIA 462.80'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
 Maximum texture size: 4096x4096
+<<<<<<< Updated upstream
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
@@ -53,3 +54,7 @@ Load screen analysis took 0.01s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s
+=======
+Screen sizes: virtual=(1280, 720) physical=(1078, 900) drawable=(1078, 900)
+Maximum texture size: 4096x4096
+>>>>>>> Stashed changes
