@@ -224,6 +224,34 @@ label library2:
             jump hospital
 
 label hospital:
+    "???" "ah, you'we awake, nya?"
+
+    "You see a young looking man walk in, dressed in a nurse outfit. He has pink, scruffy hair, cat ears, and some smart looking glasses. He looks at you worryingly. You look down, and notice he has a tray of food."
+
+    "???" "i bwought you something to eat, nya. you must be hungwy, nya. pawsitively stawving."
+
+    pov "Ah, thanks! Yeah, I guess I am pretty hungry… how did I get here? And who are you?"
+
+    bhe "ahhhh my apawlogies! My name is b/he! i’m a new nuwsing student hewe, nya."
+
+    pov "Nice to meet you!"
+    "B/he puts the tray of food down next to you. You get a closer look at his face and notice his freckles. How… how cute… "
+
+    bhe " 2 othew students cawwed the heawth centew aftew they found uwu passed out own the gwound. rupd bwought uwu hewe tuwu me, awnd i’ve bewn taking cawe of uwu fow a whiwe now, nya"
+    "He motions to a cup of soup"
+    "You take a sip of the soup as bhe watches you expectantly. It’s delicious! Who knew this kind nurse was such a good cook, too!"
+
+    bhe "NYAAAA WHAT DO YOU MEAN? Im not that cute uwu"
+
+    pov "It's delicious!"
+
+    "B/He giggles"
+    bhe "i’m so happy that you wike it! i’m a good cook, nyaturally"
+
+    "Suddenly there's a knock at the door. B/He goes over and opens it. 2 students come walking in. They look disappointed?"
+
+    
+
 
 
 
