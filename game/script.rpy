@@ -4,22 +4,22 @@
 # name of the character.
 
 
-define ee = Character("[EE]")
-define rexb = Character("[REXB]")
-define lx = Character("[LX]")
-define h = Character("[H]")
-define bhe = Character("[B/He]")
-define w1 = Character("[Wknd 1]")
-define w2 = Character("[Wknd 2]")
-define c = Character("[C]")
-define b = Character("[B]")
+define ee = Character("EE")
+define rexb = Character("REXB")
+define lx = Character("LX")
+define h = Character("H")
+define bhe = Character("B/He")
+define w1 = Character("Wknd 1")
+define w2 = Character("Wknd 2")
+define c = Character("C")
+define b = Character("B")
 define pov = Character("[povname]")
-define dave = Character("[Dave]")
+define dave = Character("Dave")
 
 image bg casc = "casc.jpg"
 image bg classroom = "classroom.jpg"
 
-$ EE = REXB = LX = H = B/He = Wknd 1 = Wknd 2 = C = B = Dave = "???"
+$ ee = rexb = lx = h = bhe = w1 = w2 = c = b = dave = "???"
 
 
 
@@ -136,7 +136,7 @@ label class1:
         "You’re cute!":
             jump rexb
 
-        "Yeah what he said! We came all the way over here for you to be late and to cancel class?"
+        "Yeah what he said! We came all the way over here for you to be late and to cancel class?":
             jump rexb2
 
 
@@ -162,7 +162,7 @@ label class1:
 
 
     "Before you know it class is over, but the professor has one last announcement. All classes are fully cancelled until further notice due to the buses disappearance disassembling the rutgers infrastructure."
-    "You decide to look into the disappearance by going to the library since you paid to go to this school and want to get the most out of it besides stds. You get up and look at Rexb one last time, and bid him farewell."
+    "You decide to look into the disappearance by going to the library since you paid to go to this school and want to get the most out of it. You get up and look at Rexb one last time, and bid him farewell."
     rexb "good bye cutie, I’ll see you around"
     "as he proceeds to put his hat back on and walk away. You stare at his retreating figure with a blush as you take in his more “noticeable” assets."
     "Shaking your head you walk away to find the nearest library, wondering how this day could get any weirder"
@@ -170,7 +170,64 @@ label class1:
 label library:
     scene bg library
 
+    "You arrive at the library. Maybe you’ll find some answers about the bus disappearance here. You go upstairs to the history section, and at a table you see a long-haired student studying a textbook."
+    "his gorgeous hair goes down past the table and to the floor. It’s a purple-ish silvery color. How beautiful!"
+    "You sneak a glance at his paper that he’s writing on. At the top, he’s written his name as 'H' Interesting..."
+    "You have to talk to him! How could you start a conversation?"
+
+    $ h = "H"
     
+    menu:
+
+        "hey sexy":
+            h "Um… excuse me?"
+            pov "You heard me ;)"
+            h "Is this a prank? I’m clearly busy studying. I don’t have time for this."
+            "bad choice."
+            pov "Sorry, I just couldn’t resist not saying something. Your hair is really pretty. What are you studying?"
+            "H rolls his eyes. He motions for you to sit down. I guess it worked?"
+            h "I’m used to people flirting with me, but nobody has been as direct as you. However, I’m curious. I assume you didn’t come to the library to find a date?"
+            jump library2
+
+
+        "hi is this seat taken?":
+            "H looks up at you, seeming slightly annoyed."
+            h "no..."
+            "You smile politely and take a seat, breaking out your laptop."
+            pov "My name is [povname]! Nice to meet you! And you are?"
+            h "My name is H. Just H. Did you come here to make new friends on the first day?"
+            jump library2
+
+label library2:
+
+    pov "Actually no, I came to find a history book about the Rutgers buses"
+    "Hearing this, H perks up. He seems surprised."
+    h "Why the Rutgers buses?"
+    pov "They’ve disappeared. I wanted to know if this has ever happened before in Rutgers history. I mean, buses don’t just disappear, right? I need to learn about buses."
+    "H sits silently, pondering something. They meet your eyes"
+    "He suddenly gets up and steps closer to your face. You can feel his warm breath on your skin as he whispers"
+    h "I advise you to not investigate this further. For our sake"
+    "H barges past you and runs out of the library, leaving their materials behind. You stare in astonishment."
+
+    menu: 
+        "Run after him":
+            "You start running after H as fast as you can. He slides down the hand rail on the stairs and hits the floor running. This guy is insane!"
+            "You attempt to jump down all the steps at once, but your ankle rolls. You fall to the floor, hit your head, and black out."
+            jump hospital
+
+        "Stay there":
+            "You hear his footsteps slowly recede. Looking at the table, you decide to read his notes. What if he’s written his phone number on there somewhere?"
+            "Reading them, you notice there’s a lot of fancy graphs and equations. They all seem to be about some sort of magical spell? Weird… "
+            "All of a sudden you feel a bad headache coming on. Your stomach twists and a pain shoots up your spine. You black out."
+            jump hospital
+
+label hospital:
+
+
+
+
+
+
 
 
 
