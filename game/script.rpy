@@ -16,6 +16,8 @@ define b = Character("B")
 define pov = Character("[povname]")
 define dave = Character("Dave")
 
+$ eepts = rexbpts = lxpts = bhepts = w1pts = w2pts = cpts = bpts = 0
+
 image bg casc = "casc.jpg"
 image bg classroom = "classroom.jpg"
 
@@ -171,6 +173,30 @@ label class1.2:
     "as he proceeds to put his hat back on and walk away. You stare at his retreating figure with a blush as you take in his more “noticeable” assets."
     "Shaking your head you walk away to find the nearest library, wondering how this day could get any weirder"
 
+    jump meetee
+
+label meetee:
+    "You are on your way to the library when you hear the sound of galloping hooves behind you."
+
+    "???" "Look out!"
+
+    "You whirl in time just to find a large white horse careening toward you, just a few feet behind you. With no time to jump out or move away, you get down to a crouch, instinctively shielding your arms over your face."
+
+    "But the collision never comes. “You idiot!” you hear. You look up to find yourself face to face with the horse’s face. It’s utterly huge, and looks like it’s judging you."
+
+Did … did this horse just speak to me? You think, but your question is answered as its rider slides off of its saddle, an angry expression on his face. 
+
+He’s short, with orange hair and cute purple eyes that are currently squinted. You gaze up at his slim figure and jerk backward in surprise when you see the two fuzzy cat ears stuck to either side of his head. 
+
+“Were you trying to get yourself killed?” He demands. You are too preoccupied with the ears. You wonder if they are real. 
+
+You stare up at him dumbly. 
+
+“Hey, stupid. Have you got fluff inside your ears? I’m talking to you,” he snaps, and harrumphs so hard his entire body moves with it. Your attention is suddenly diverted to the twin, fluffy orange tails streaming behind him. They are the most majestic things you have ever seen today. 
+
+You wonder if he’ll let you touch them. 
+
+
 label library:
     scene bg library
 
@@ -241,7 +267,7 @@ label hospital:
     "He motions to a cup of soup"
     "You take a sip of the soup as bhe watches you expectantly. It’s delicious! Who knew this kind nurse was such a good cook, too!"
 
-    bhe "NYAAAA WHAT DO YOU MEAN? Im not that cute uwu"
+    bhe "NYAAAA WHAT DO YOU MEAN? i'm not that cute uwu"
 
     pov "It's delicious!"
 
