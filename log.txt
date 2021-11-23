@@ -1,185 +1,35 @@
-Mon Nov 15 21:02:14 2021
+Sat Nov 20 19:50:22 2021
 Windows-10-10.0.19041
 Ren'Py 7.4.10.2178
  
 
-Bootstrap to the start of init.init took 0.21s
+Bootstrap to the start of init.init took 0.25s
 Early init took 0.01s
 Loader init took 0.05s
-Loading error handling took 0.08s
-Loading script took 2.28s
-Loading save slot metadata. took 0.01s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 213: choice menuitem expects a non-empty block.
-    "Run after him":
-                    ^
-DPI scale factor: 1.250000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 1.01s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2060 with Max-Q Design/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 496.49'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
-Could not open 'cache/shaders.txt':
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 19.54s
-Early init took 0.00s
-Loader init took 0.04s
-Loading error handling took 0.08s
-Loading script took 2.38s
-Loading save slot metadata. took 0.01s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 22: invalid syntax
-    EE = REXB = LX = H = B/He = Wknd 1 = Wknd 2 = C = B = Dave = "???"
-                                      ^
-    
-DPI scale factor: 1.250000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Interface start took 0.69s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2060 with Max-Q Design/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 496.49'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
-Could not open 'cache/shaders.txt':
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 81.73s
-Early init took 0.00s
-Loader init took 0.05s
-Loading error handling took 0.09s
-Loading script took 2.18s
-Loading save slot metadata. took 0.01s
+Loading error handling took 0.32s
+Loading script took 4.64s
+Loading save slot metadata. took 0.04s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.33s
-Loading analysis data took 0.06s
-Analyze and compile ATL took 0.01s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\gumke\\AppData\\Roaming/RenPy/backups\\RutgersBusSim':
-Dump and make backups. took 0.22s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.05s
-DPI scale factor: 1.250000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 0.50s
-Cleaning stores took 0.00s
-Init translation took 0.08s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.07s
-Prepare screens took 0.18s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.13s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2060 with Max-Q Design/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 496.49'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
-Could not open 'cache/shaders.txt':
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 60, in script
-    dave "Ah [povname], it’s your first day too?"
-  File "C:\Users\gumke\Downloads\renpy-7.4.10-sdk/renpy/ast.py", line 721, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\gumke\Downloads\renpy-7.4.10-sdk/renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\gumke\Downloads\renpy-7.4.10-sdk/renpy/character.py", line 1234, in __call__
-    who = self.prefix_suffix("who", self.who_prefix, who, self.who_suffix)
-  File "C:\Users\gumke\Downloads\renpy-7.4.10-sdk/renpy/character.py", line 1155, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "C:\Users\gumke\Downloads\renpy-7.4.10-sdk/renpy/character.py", line 1135, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "C:\Users\gumke\Downloads\renpy-7.4.10-sdk/renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'Dave'
-
-While running game code:
-  File "game/script.rpy", line 60, in script
-    dave "Ah [povname], it’s your first day too?"
-KeyError: u'Dave'
-Resetting cache.
-Bootstrap to the start of init.init took 180.33s
-Early init took 0.00s
-Loader init took 0.05s
-Loading error handling took 0.04s
-Loading script took 0.38s
-Loading save slot metadata. took 0.02s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.11s
-Loading analysis data took 0.04s
+Running init code took 0.37s
+Loading analysis data took 0.00s
 Analyze and compile ATL took 0.01s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\gumke\\AppData\\Roaming/RenPy/backups\\RutgersBusSim':
 Dump and make backups. took 0.20s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.07s
+Initial gc. took 0.05s
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.60s
+Creating interface object took 0.47s
 Cleaning stores took 0.00s
 Init translation took 0.08s
 Build styles took 0.01s
 Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.08s
-Prepare screens took 0.15s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.12s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 2060 with Max-Q Design/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 496.49'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.01s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
+Analyze screens took 0.07s
+Save screen analysis took 0.07s
+Prepare screens took 0.32s
+Save pyanalysis. took 0.08s
+Save bytecode. took 0.08s
