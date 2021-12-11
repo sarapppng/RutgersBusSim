@@ -29,7 +29,11 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p("""Next Stop is a game made by sad Rutgers students about the buses
+
+this was made for the 2021 Fall Scarlet Game Jam hosted by the Creation of Games Society
+
+Join the club to make games like this
 """)
 
 

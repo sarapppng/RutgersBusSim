@@ -17,11 +17,10 @@ define pov = Character("[povname]")
 define dave = Character("Dave")
 define endingbus = Character("???")
 
-$ eepts = rexbpts = lxpts = bhepts = w1pts = w2pts = cpts = bpts = 0
+$ ee = rexb = lx = h = bhe = w1 = w2 = b = dave = "???"
 
 image bg casc = "casc.jpg"
 image bg classroom = "classroom.jpg"
-
 
 image rexbbus normal = "rexbbus normal.png"
 
@@ -33,11 +32,15 @@ default w1romancepoint = 0
 default w2romancepoint = 0
 default bromancepoint = 0
 
+screen keymapscreen():    
+    key "p" action Jump(ending)
+    text "Press P to advance to ending"
 
 
 # The game starts here.
 
 label start:
+    play music "audio/main_game_music.mp3"
     scene bg firstdayofschool
     with fade
     python:
@@ -125,14 +128,13 @@ label intro:
     hide bbus
     
     jump class1
-    
 
-    
 label class1:
 
     scene bg classroom
     with fade
     
+    play music "audio/lol.mp3"
 
     "Eventually, you make it to class. What a miracle! Only 30 minutes late!  Not too many other people are there. I guess today will be a small class."
 
@@ -141,6 +143,8 @@ label class1:
     "You sigh with relief. No more class! But wait, what do you do now that you’re on Cook/Douglass?"
 
     show rexbbus
+
+    $ rexb = "???"
 
     rexb "Seriously??? I ran ALL THE WAY HERE! AAAARGH!!!!!"
 
@@ -159,31 +163,27 @@ label class1:
             jump rexb2
 
 
-    label rexb1:
-        "???" "Thanks cutie, but now is not the time for that"
-        "You turn your face away in embarrassment as he continues to rant and yell at the professor. Soon other students start joining in and supporting the handsome hunk."
-        "Eventually the professor concedes and goes over the syllabus of the class. While that happens you feel someone tap your right shoulder, its the handsome hunk form before."
+label rexb1:
+    "???" "Thanks cutie, but now is not the time for that"
+    "You turn your face away in embarrassment as he continues to rant and yell at the professor. Soon other students start joining in and supporting the handsome hunk."
+    "Eventually the professor concedes and goes over the syllabus of the class. While that happens you feel someone tap your right shoulder, its the handsome hunk form before."
 
-        rexb "sorry about that, but we had more important matters. My name is Rexb, I know its a little weird but that's what it is. What is your name?"
+    rexb "sorry about that, but we had more important matters. My name is Rexb, I know its a little weird but that's what it is. What is your name?"
 
-        "Your face flushes and you answer"
+    "Your face flushes and you answer"
 
-        pov "my name is [povname], sorry about what happened earlier I didn't mean to say that out loud."
+    pov "my name is [povname], sorry about what happened earlier I didn't mean to say that out loud."
 
-        jump class1.2
+    jump class12
+label rexb2:
+    "The hunk smiles at you making you want to melt into a puddle of goo. The professor relents and proceeds to go over the syllabus. You turn over to the hunk next to you and say,"
+    
+    pov "Hey there, my name is [povname], and I think it’s really cool that you stood up and said what everyone else was thinking"
 
-
-    label rexb2:
-        "The hunk smiles at you making you want to melt into a puddle of goo. The professor relents and proceeds to go over the syllabus. You turn over to the hunk next to you and say,"
-        
-        pov "Hey there, my name is [povname], and I think it’s really cool that you stood up and said what everyone else was thinking"
-
-        "???" "Of course, I’m more that happy to help the class especially after how far we all had to travel. Oh by the way my name is RexB, a little unordinary but it fits."
-
-        jump class1.2
-
-
-label class1.2:
+    "???" "Of course, I’m more that happy to help the class especially after how far we all had to travel. Oh by the way my name is RexB, a little unordinary but it fits."
+    $ rexb = "REXB"
+    jump class12
+label class12:
     "Before you know it class is over, but the professor has one last announcement. All classes are fully cancelled until further notice due to the buses disappearance disassembling the rutgers infrastructure."
     "You decide to look into the disappearance by going to the library since you paid to go to this school and want to get the most out of it. You get up and look at Rexb one last time, and bid him farewell."
 
@@ -196,6 +196,8 @@ scene bg casc
 with fade
 
 "You are on your way to the library when you hear the sound of galloping hooves behind you."
+play music "audio/sexy.mp3"
+$ ee = "???"
 
 ee "Look out!"
 
@@ -340,6 +342,7 @@ label library:
     "You sneak a glance at his paper that he’s writing on. At the top, he’s written his name as 'H' Interesting..."
     show hbus
     "You have to talk to him! How could you start a conversation?"
+    $ h = "???"
     
     menu:
 
@@ -361,6 +364,7 @@ label library:
             h "no..."
             "You smile politely and take a seat, breaking out your laptop."
             pov "My name is [povname]! Nice to meet you! And you are?"
+            $ h = "H"
             h "My name is H. Just H. Did you come here to make new friends on the first day?"
             jump library2
 
@@ -372,7 +376,7 @@ label library2:
     pov "They’ve disappeared. I wanted to know if this has ever happened before in Rutgers history. I mean, buses don’t just disappear, right? I need to learn about buses."
     "H sits silently, pondering something. They meet your eyes"
     "He suddenly gets up and steps closer to your face. You can feel his warm breath on your skin as he whispers"
-    #play music "hitman.mp3"
+    play music "audio/dungeon.mp3"
     h "I advise you to not investigate this further. For our sake"
     "H barges past you and runs out of the library, leaving their materials behind. You stare in astonishment."
     hide hbus
@@ -395,7 +399,10 @@ label hospital:
 
     "You wake up in a brightly lit medical room. You feel sweaty and fatigued. Suddenly, the door opens."
 
+    play music "audio/main_game_music.mp3"
+
     show bhebus
+    $ bhe = "???"
     bhe "ah, you’we awake, nya?"
 
     "You see a young looking man walk in, dressed in a nurse outfit. He has pink, scruffy hair, cat ears, and some smart looking glasses. He looks at you worryingly. You look down, and notice he has a tray of food."
@@ -434,6 +441,8 @@ label eatthegoddamnsoup:
 hide bhebus
 
 show w1w2bus
+
+play music "audio/sexy.mp3"
 
 w2 "hello! We’re so glad you’re safe"
 $ w1 = "Weekend 1"
@@ -525,6 +534,8 @@ hide w1w2bus
 scene bg businessbuilding
 with fade
 
+play music "audio/main_game_music.mp3"
+
 "You leave the hospital on Livingston after agreeing to take BHe’s phone number in case you start feeling unwell again, nya. You start heading towards the library again to see if you can find the mysterious H guy."
 "As you walk to the bus stop, a man comes out of the business building. It’s the B guy! Who you met earlier this morning!"
 show bbus
@@ -554,6 +565,7 @@ label continueb:
 pov "I fainted so I was taken to the health center to get checked out. I should be fine now. Thank you for asking"
 b "of course anytime cutie. Now I must be heading off as I have other matters to attend to"
 pov "Also this is random, but do you know anything about the buses disappearing?"
+play music "audio/dungeon.mp3"
 "He stops suddenly in his tracks and has a face that scared you shitless"
 b "Do not look into those matters and I do not knowing anything about them. Now if you will excuse me I must go"
 "He quickly walks away before you can question him anymore."
@@ -575,6 +587,7 @@ menu:
         $ eeromancepoint+=1
         "You slow down to allow EE to catch up with you a little bit. To hear what he has to say"
         ee "I promise you, you don't want to find out what's going on! I'm being serious!"
+        pov "It's too late, EE. I've made up my mind. I"
         jump afterchoice
 
     "Speed up.":
@@ -586,6 +599,7 @@ label afterchoice:
     hide eebus
     scene bg dungeon
     with fade
+    play music "audio/dungeon2.mp3"
     "You land on the hard concrete, rebreaking your already weak skull from the first fall. You pass out once again."
     "Hours later, your eyes open. You’re thirsty. You feel a dull pain in your head and wrists. As you come to, you realize you’re in a dark room, tied to a chair. It’s dank, and musty smelling."
     "There’s a dim light in one corner of the room. You feel pure horror fill your body, as you struggle to free your wrists from the restraints. You can’t. What the fuck is happening?"
@@ -609,8 +623,11 @@ label afterchoice:
 
 label lucystone:
 
+
 $ romances = [eeromancepoint, bromancepoint, hromancepoint, bheromancepoint, w1romancepoint, w2romancepoint, rexbromancepoint]
 $ romances = sorted(romances)
+
+$ print(romances)
 
 $ x = romances[len(romances)-1]
 
@@ -692,6 +709,8 @@ hide w1w2bus
 
 label ending:
 
+play music "audio/decision.mp3"
+
 show bhebus
 
 bhe "W-wait! Before you do anything, just....just hear me out. Please."
@@ -728,6 +747,7 @@ endingbus "And here I thought... I thought you loved me the most of all."
 
 menu:
     "Buses iterum in humanam formam convertentur":
+        play music "audio/ending.mp3"
         scene bg white
         with fade
         "Suddenly, you feel an overwhelming sense of vertigo wash over you in waves as your vision blurs and the world around you looks like it’s spinning. He sheds a single tear."
@@ -748,6 +768,7 @@ menu:
         "Ah, you must still be tired from your nap. All the buses look roughly the same, anyways. That’s probably why. You unlock your phone and begin to mindlessly browse through something as the bus sighs, lurches, and dutifully treks its way to College Avenue."
         return
     "Keep them as your boyfriends":
+        play music "audio/ending.mp3"
         "You try to proceed, but then you feel something, an overwhelming sense of...something. You stop, you drop to your knees and sob."
         pov "I can’t do this to you guys, you guys mean too much to me."
         endingbus "Thank you so much, for giving us a chance at living a normal life."
@@ -763,9 +784,10 @@ menu:
         "They smile and tell you that its alright. Your lover drops you gently onto your feet. Slowly all the different buses come to you to give you a hug and their thanks."
         pov "Now that the case of the buses mystery has been solved, whats the plan now?"
         endingbus "Live our lives like we were meant to be."
+
+
         return
 
-
-# This ends the game.
+scene thanks
 
 return
