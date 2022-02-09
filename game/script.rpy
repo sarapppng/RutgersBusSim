@@ -4,38 +4,58 @@
 # name of the character.
 
 
-define ee = Character("EE", image = "eebus")
-define rexb = Character("REXB", image = "rexbbus")
-define lx = Character("LX")
+define ee = Character("EE", image="eebus")
+define rexb = Character("REXB", image ="rexbbus")
+define lx = Character("LX", image="lxbus")
 define h = Character("H", image = "hbus")
-define bhe = Character("B/He", image = "bhebus")
-define w1 = Character("Wknd 1", image = "wk1bus")
-define w2 = Character("Wknd 2", image = "wk2bus")
-define c = Character("C")
+define bhe = Character("BHe", image ="bhebus")
+define w1 = Character("Wknd 1", image ="wk1bus")
+define w2 = Character("Wknd 2", image ="wk2bus")
+define c = Character("C", image="cbus")
 define b = Character("B", image = "bbus")
 define pov = Character("[povname]")
 define dave = Character("Dave")
-define endingbus = Character("???")
+define endingbus = Character("???", image="endingbusimg")
 
 $ ee = rexb = lx = h = bhe = w1 = w2 = b = dave = "???"
 
 image bg casc = "casc.jpg"
 image bg classroom = "classroom.jpg"
+image bbus = "bbus.png"
+image eebus = "eebus.png"
+image rexbbus = "rexbbus.png"
+image hbus normal = "hbus.png"
+image bhebus = "bhebus.png"
+image wk1bus = "wk1bus.png"
+image wk2bus = "wk2bus.png"
+image endingbusimg = "ending"
 
-image rexbbus normal = "rexbbus normal.png"
+$ eeromancepoint = 0
+$ rexbromancepoint = 0
+$ hromancepoint = 0
+$ bheromancepoint = 0
+$ w1romancepoint = 0
+$ w2romancepoint = 0
+$ bromancepoint = 0
 
-default eeromancepoint = 0
-default rexbromancepoint = 0
-default hromancepoint = 0
-default bheromancepoint = 0
-default w1romancepoint = 0
-default w2romancepoint = 0
-default bromancepoint = 0
+transform jump_in:
+ ease .08 yoffset 15
+ ease 0.2 yoffset 0
 
-screen keymapscreen():    
-    key "p" action Jump(ending)
-    text "Press P to advance to ending"
-
+transform jeepers:
+ ease .06 yoffset 24
+ ease .06 yoffset -24
+ ease .05 yoffset 20
+ ease .05 yoffset -20
+ ease .04 yoffset 16
+ ease .04 yoffset -16
+ ease .03 yoffset 12
+ ease .03 yoffset -12
+ ease .02 yoffset 8
+ ease .02 yoffset -8
+ ease .01 yoffset 4
+ ease .01 yoffset -4
+ ease .01 yoffset 0
 
 # The game starts here.
 
@@ -95,11 +115,12 @@ label intro:
     "You think to yourself, maybe you shouldn’t take the scooter. It might just be a better idea to wait and see if a bus comes."
     "There’s no way a bus COULDN’T come, right?"
 
-    "???" "Oh my, how dreadful! No buses!"
+    show bbus at jump_in
+
+    b "Oh my, how dreadful! No buses!"
 
     "A smooth, sultry voice calls out behind you. You whirl around in surprise, and immediately your face slowly starts burning."
 
-    show bbus
 
     "A man about twenty-two? years old wearing a navy blazer, black slacks and shoes, a rolex, and a light blue shirt with a tie that matched the blazer. Your eyes move up to his face and you feel your ears start burning."
     "A face that was sculpted from marble, with hazel eyes, thin gold framed glasses accentuating the deep hazel eyes. With high cheekbones and a californian tan? And black hair shaped and trimmed upwards with faded sides, you find yourself standing unable to even think coherently."
@@ -193,7 +214,7 @@ label class12:
     "Shaking your head you walk away to find the nearest library, wondering how this day could get any weirder"
 
 scene bg casc
-with fade
+with blinds
 
 "You are on your way to the library when you hear the sound of galloping hooves behind you."
 play music "audio/sexy.mp3"
@@ -242,6 +263,7 @@ menu:
     "Can I touch your ears?":
         $ eeromancepoint+=1
         "As soon as the words leave your mouth, the catboy flushes a deep red."
+        show ee at jeepers 
         ee "Why would you ask me something like that! Y-you pervert!"
         "he shouts, so loud that a bunch of birds chilling in a nearby tree are scared off. Even the horse looks scandalized. He looks around nervously, and somehow seems to blush even more."
         "After a long, awkward pause, he lets out a long-suffering sigh."
@@ -294,6 +316,7 @@ menu:
         $ eeromancepoint+=2
         "EE splutters, and blushes so hard you wonder how his head hasn’t come off yet. Sighing, he grabs an armful of his tails from behind him and shyly presents them to you."
         "*pet tails* You grab a handful of fur from one of the tails. EE jumps backward as if shocked. You glance at him questioningly; His face is tomato red. You give one of his tails a soft yank. He HOWLS."
+        show ee at jeepers 
         ee "NOT THERE!!!"
         "You wonder what this scene must look like to the casual observer. The horse is pointedly looking away. This is getting too weird, even for you."
         "You stare at each other passionately."
@@ -411,7 +434,7 @@ label hospital:
 
     pov "ah, thanks! Yeah, i guess i am pretty hungry… how did i get here? And who are you?"
 
-    $ bhe = "B/He"
+    $ bhe = "BHe"
     bhe "ahhhh my apawlogies! My name is B/He! I’m a newu nuwsing student hewe, nya"
 
     pov "nice to meet you!"
@@ -529,7 +552,8 @@ menu:
         jump outofhospital
 
 label outofhospital:
-hide w1w2bus
+hide w1bus
+hide w2bus
 
 scene bg businessbuilding
 with fade
@@ -623,6 +647,7 @@ label afterchoice:
 
 label lucystone:
 
+$ bhe = "BHe"
 
 $ romances = [eeromancepoint, bromancepoint, hromancepoint, bheromancepoint, w1romancepoint, w2romancepoint, rexbromancepoint]
 $ romances = sorted(romances)
@@ -632,20 +657,28 @@ $ print(romances)
 $ x = romances[len(romances)-1]
 
 if x == eeromancepoint:
-    $ endingbus = ee
+    $ endingbus = "EE"
+    image endingbusimg = "eebus.png"
 elif x == bromancepoint:
-    $ endingbus = B
+    $ endingbus = "B"
+    image endingbusimg = "bbus.png"
 elif x == hromancepoint:
-    $ endingbus = H
+    $ endingbus = "H"
+    image endingbusimg = "hbus.png"
 elif x == bheromancepoint:
-    $ endingbus = bhe
+    $ endingbus = "BHe"
+    image endingbusimg = "bhebus.png"
 elif x == w1romancepoint:
-    $ endingbus = w1
+    $ endingbus = "Wknd1"
+    image endingbusimg = "w1bus.png"
 elif x == w2romancepoint:
-    $ endingbus = w2
+    $ endingbus = "Wknd2"
+    image endingbusimg = "w2bus.png"
 elif x == rexbromancepoint:
-    $ endingbus = rexb
+    $ endingbus = "REXB"
+    image endingbusimg = "rexbbus.png"
 
+$ print(endingbusimg)
 
 
 bhe "uwu'we undewneath the wucy stone haww wight now, nya. >.< we had tuwu put uwu hewe fow youw own safety"
@@ -705,7 +738,8 @@ pov "you guys are the reason Rutgers has been in chaos! You're the reason Dave i
 "You stare at each Rutgers bus with longing, remembering the fond memories you have with them. But you need to make the right choice. You turn around and grab the open book from the table, flipping to the page with the spells. The buses gasp and reach towards you in horror."
 
 hide hbus
-hide w1w2bus
+hide w1bus
+hide w2bus
 
 label ending:
 
@@ -737,10 +771,12 @@ ee "But have you ever considered that we want to be more than the infernal machi
 pov "I...I don’t understand"
 hide bbus
 hide eebus
+show endingbus
+endingbus "[povname]..."
 endingbus "Of course you don’t. That’s why we wanted to be like you. We silently waited, planned for this day. We saw what it was like to be free to be whoever you wanted and go wherever you wanted to go, just like you."
 endingbus "Do you understand how painful it is to do the same thing all day every day while the universe taunts you by dangling freedom before your very headlights? You...you can wander this world freely. This world is what you make of it."
 endingbus "You can be whoever you want to be. But us? We are doomed to roll across this earth for as long as this institution wills it. So why not see how the other half lives?"
-pov "So what do you want me to do?"
+pov "endingbus.name .... I loved you the most of al. What do you want me to do?"
 endingbus "Well, it’s not like I can make you do anything, right? I’m just a lousy old bus who spilled his heart out to someone who’s probably going to forget about all of this anyways. I can’t stop you, but just know what you’re subjecting us to for the sake of normalcy."
 endingbus "And here I thought... I thought you loved me the most of all."
 
@@ -784,10 +820,9 @@ menu:
         "They smile and tell you that its alright. Your lover drops you gently onto your feet. Slowly all the different buses come to you to give you a hug and their thanks."
         pov "Now that the case of the buses mystery has been solved, whats the plan now?"
         endingbus "Live our lives like we were meant to be."
-
-
+        #jump chapter1end
         return
 
-scene thanks
+#label chapter1end:
 
 return
